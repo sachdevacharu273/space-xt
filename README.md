@@ -20,10 +20,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## SEO, Accessibility & Best Practice
-![seo](https://user-images.githubusercontent.com/26519250/91552142-eeb55600-e948-11ea-9b24-ce75ff0a5cdb.PNG)
-## Filtering of Mission
-
 The Routing filter is implemented using query params.
 
 ## Deployed in Heroku CI
