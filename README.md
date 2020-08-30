@@ -24,4 +24,4 @@ The Routing filter is implemented using query params.
 
 ## Deployed in Heroku CI
 
-Take a look at live application at [Heroku](https://Charu-xt.herokuapp.com/).
+Take a look at live application at [Heroku](https://charu-spacex.herokuapp.com/).
