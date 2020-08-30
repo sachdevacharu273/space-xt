@@ -1,0 +1,108 @@
+<div class="heading">
+  <h1>SpaceX Launch Programs</h1>
+</div>
+<div class="body">
+  <div class="container">
+    <div class="filter-menu">
+      <h2>Filters</h2>
+      <p>Launch Year</p>
+      <hr class="horizontal-line" />
+      <div>
+        <div class="launch_year">
+          <button
+            class="btn-success"
+            [routerLink]="['/filter']"
+            queryParamsHandling="merge"
+            [queryParams]="{ launch_year: year }"
+            *ngFor="let year of List_of_Years"
+            (click)="clickedButton($event)"
+            type="button"
+          >
+            {{ year }}
+          </button>
+        </div>
+
+        <p>Successful Launch</p>
+        <hr class="horizontal-line" />
+        <div class="launch_success">
+          <button
+            class="btn-success"
+            [routerLink]="['/filter']"
+            queryParamsHandling="merge"
+            [queryParams]="{ launch_success: true }"
+            (click)="clickedButton($event)"
+            type="button"
+          >
+            True
+          </button>
+          <button
+            class="btn-success"
+            queryParamsHandling="merge"
+            [routerLink]="['/filter']"
+            [queryParams]="{ launch_success: false }"
+            (click)="clickedButton($event)"
+            type="button"
+          >
+            False
+          </button>
+        </div>
+        <p>Successful Landing</p>
+        <hr class="horizontal-line" />
+        <div class="landing_success">
+          <button
+            class="btn-success"
+            queryParamsHandling="merge"
+            [routerLink]="['/filter']"
+            [queryParams]="{ landing_success: true }"
+            (click)="clickedButton($event)"
+            type="button"
+          >
+            True
+          </button>
+          <button
+            class="btn-success"
+            queryParamsHandling="merge"
+            [routerLink]="['/filter']"
+            [queryParams]="{ landing_success: false }"
+            (click)="clickedButton($event)"
+            type="button"
+          >
+            False
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-section">
+      <div class="mission" *ngFor="let miss of List_of_Mission">
+        <div class="card">
+          <img
+            data-src="{{ miss.links.mission_patch_small }}"
+            alt="{{ miss.mission_name }}"
+            loading="lazy"
+          />
+          <div class="details">
+            <p style="color: #4a4acd">
+              <b>{{ miss.mission_name }} #{{ miss.flight_number }}</b>
+            </p>
+            <p><b>Mission Ids:</b></p>
+            <ul *ngFor="let id of miss.mission_id">
+              <li>{{ id }}</li>
+            </ul>
+            <p><b>Launch year:</b>{{ miss.launch_year }}</p>
+            <p><b>Successful Lauch:</b>{{ miss.launch_success }}</p>
+            <p>
+              <b>Successful Landing:</b
+              >{{ miss.rocket.first_stage.cores[0].land_success }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <h2 style="font-weight: inherit">
+    <strong>Developed by :</strong> {{ dev_name }}
+  </h2>
+</footer>
